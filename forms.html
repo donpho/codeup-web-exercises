@@ -4,7 +4,7 @@
     <title>"Register With Us"</title>
 </head>
 <body>
-    <form method="POST" action="http://webhook.site/3dea4823-3c12-4971-bb3e-f945a37796f0"></form>
+    <form method="POST" action="http://webhook.site/3dea4823-3c12-4971-bb3e-f945a37796f0">
     <br>
     <label for="user">
     <input id="user" type="text" name="email" placeholder="Enter your email address.">
@@ -16,7 +16,8 @@
     <br>
     Please tell us about yourself.
     <br>
-    <textarea name="bio"></textarea>
+        <label for="bio"></label>
+        <textarea id="bio" name="bio"></textarea>
     <br>
     How did you hear about us?
     <br>
@@ -35,24 +36,16 @@
     <br>
     What web browser are you currently using?
     <br>
-    <select name="web-browser">
-        <label for="chrome">
+    <label for="browser"></label>
+    <select id="browser" name="web-browser">
         <option id="chrome" value="google">Google Chrome</option>
-        </label>
-        <label for="ie">
         <option id="ie" value="ie">Internet Explorer</option>
-        </label>
-        <label for="firefox">
         <option id="firefox" value="firefox">Mozilla Firefox</option>
-        </label>
-        <label for="safari">
         <option id="safari" value="safari">Safari</option>
-        </label>
-        <label for="other-browser">
         <option id="other-browser" value="other">Other</option>
-        </label>
     </select>
     <br>
     <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
