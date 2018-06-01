@@ -1,0 +1,63 @@
+h1 {
+    color: #ff6edc;
+    text-align: center;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #6ba9ff;
+    background-image: url("codeup-logo.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    font-family: "Arial Black";
+    margin: 125px;
+}
+
+ul {
+    list-style-type: decimal-leading-zero;
+}
+
+table {
+    width: 100%;
+    border: 3px solid black;
+}
+th {
+    background-color: #111111;
+    color: white;
+}
+th, td {
+    padding: 2px;
+    height: 50px;
+}
+
+tr {
+    text-align: center;
+}
+
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+aside {
+    text-align: center;
+    font-size: 10pt;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
