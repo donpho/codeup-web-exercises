@@ -91,7 +91,7 @@ a {
 
 .profile-details {
     width: calc(25% - 1.5em);
-    margin: .5em;
+    margin: 0 .5em;
     float: left;
 }
 
@@ -108,16 +108,16 @@ a {
 }
 
 .container {
-    margin-top: 3em;
+    padding: 3em;
 
 }
 
 .media {
     width: 100%;
     background-color: var(--light-bg);
-    border-bottom: 1px var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
     padding: .5em;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .media-image {
