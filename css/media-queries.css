@@ -1,0 +1,106 @@
+h1 {
+    text-align: center;
+}
+.alert-info {
+    width: 100%;
+    color: black;
+    text-align: center;
+    background-color: lightblue;
+    padding: 15px 0;
+    border: 1px solid gray;
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding: 20px 0;
+    background-color: gray;
+    margin-bottom: 10px;
+    text-align: center;
+    /*width: 100%;*/
+}
+
+ul {
+    padding-left: 0;
+}
+
+.sub-section{
+    font-style: italic;
+}
+
+footer p {
+    float:left;
+}
+
+#social-media-links {
+    float:right
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media screen and (min-width:768px) {
+
+    h1 {
+        text-align: left;
+        float: left;
+    }
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    .nav-links {
+        float: right;
+    }
+
+    .nav-links li {
+        background-color: white;
+        list-style-type: none;
+        padding-right: 20px;
+        margin: 0;
+        display: inline-block;
+    }
+
+    .main {
+        float: left;
+        width: 60%;
+        margin-bottom: 500px;
+    }
+
+    .sub-section {
+        float: right;
+
+        width: 30%;
+    }
+
+    footer {
+        clear: both;
+    }
+}
+
+/*.nav-links li {*/
+    /*list-style-type: none;*/
+    /*padding: 20px 0;*/
+    /*background-color: gray;*/
+    /*margin-bottom: 10px;*/
+    /*text-align: center;*/
+    /*width: 100%;*/
+
+
+/*!*!* Large devices (large desktops, 1200px and up) *!*!*/
+/*!*@media screen and (min-width:1200px) {*!*/
+
+    /*!*h1 {*!*/
+        /*!*text-align: right;*!*/
+        /*!*color: green;*!*/
+    /*!*}*!*/
+
+
+
+
+/*}
