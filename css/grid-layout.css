@@ -11,26 +11,29 @@
 }
 .column {
     float: left;
-    background-color: #6ba9ff;
+    /*background-color: #6ba9ff;*/
     margin-bottom: 20px;
-    border: #111111 solid 1px;
+    /*border: #111111 solid 1px;*/
     padding: 10px 0;
     /*padding: 10px;*/
 }
 .one-third {
-    width: calc(33.33% - 2px);
+    width: calc(33.33%);
+}
+.two-third {
+    width: calc(66.66%)
 }
 .one-half {
-    width: calc(50% - 2px);
+    width: calc(50%);
 }
 .one-fourth {
-    width: calc(25% - 2px);
+    width: calc(25%);
 }
 .one-eight {
-    width: calc(12.5% - 2px);
+    width: calc(12.5%);
 }
 @media screen and (max-width: 768px) {
-    .one-third, .one-half, .one-fourth, .one-eight {
+    .one-third, .one-half, .one-fourth, .one-eight, .one-third {
         width: 100%;
     }
 }
