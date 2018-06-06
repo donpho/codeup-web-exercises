@@ -1,0 +1,36 @@
+.container {
+    /*background-color: #3B94D9;*/
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 1200px;
+}
+.row {
+    text-align: center;
+    width: 100%;
+}
+.column {
+    float: left;
+    background-color: #6ba9ff;
+    margin-bottom: 20px;
+    border: #111111 solid 1px;
+    padding: 10px 0;
+    /*padding: 10px;*/
+}
+.one-third {
+    width: calc(33.33% - 2px);
+}
+.one-half {
+    width: calc(50% - 2px);
+}
+.one-fourth {
+    width: calc(25% - 2px);
+}
+.one-eight {
+    width: calc(12.5% - 2px);
+}
+@media screen and (max-width: 768px) {
+    .one-third, .one-half, .one-fourth, .one-eight {
+        width: 100%;
+    }
+}
