@@ -55,7 +55,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo() {
-    return random == 2;
+    return random === 2;
 
 }
 var check = isTwo();
@@ -117,5 +117,17 @@ function applyDiscount(originalPrice, discountPercent) {
 }
 var discount = applyDiscount(45.99,.12);
 console.log(discount);
+
+
+
+// Function Warm-up
+
+    function makeUsername(name, age) {
+        name.toLowerCase();
+        return name.length + name.substring(0,1) + age;
+    }
+
+    console.log(makeUsername(prompt('What is your first name>'),prompt('What is your age?')));
+
 
 })();
