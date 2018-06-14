@@ -16,11 +16,8 @@
  * Can you refactor your code to use functions?
  */
 function numberId(number) {
+    number = parseInt(number);
     console.log(number);
-    try {
-        if (number.NaN){
-
-        }
         if (number % 2 === 0) {
             alert('Your number is even.')
         }
@@ -38,10 +35,7 @@ function numberId(number) {
         }
         return "This is the end of this exercise."
     }
-    catch (err){
-        alert('Sorry this is not a number!');
-    }
-}
+
 
 var user = confirm('Would you like to enter a number?');
 if (user === true){
