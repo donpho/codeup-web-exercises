@@ -125,31 +125,31 @@ function analyzeColor(userColor) {
 
     //Both switch and if else works just comment one out to use. Did this just for practice both conditionals.
 
-    switch (userColor) {
-        case "blue" :
-            return "Hey you guessed right!";
-        case "green" :
-            return "Good guess!";
-        default:
-            return "Sorry but " + userColor + " is not the color that I am thinking of."
+    // switch (userColor) {
+    //     case "blue" :
+    //         return "Hey you guessed right!";
+    //     case "green" :
+    //         return "Good guess!";
+    //     default:
+    //         return "Sorry but " + userColor + " is not the color that I am thinking of."
+    // }
+
+
+    if (userColor === "red"){
+        return "Red like roses fills my dreams and brings me to the place you rest.";
     }
-
-
-    // if (userColor === "red"){
-    //     return "Red like roses fills my dreams and brings me to the place you rest.";
-    // }
-    // else if (userColor === "white"){
-    //     return "White is cold and always yearning, burdened by a royal test.";
-    // }
-    // else if (userColor === "black"){
-    //     return "Black the beast descends from shadows.";
-    // }
-    // else if (userColor === "yellow") {
-    //     return "Yellow beauty burns gold."
-    // }
-    // else {
-    //     return "Ooh, sorry, but " + userColor + " is not the color that I am thinking of!"
-    // }
+    else if (userColor === "white"){
+        return "White is cold and always yearning, burdened by a royal test.";
+    }
+    else if (userColor === "black"){
+        return "Black the beast descends from shadows.";
+    }
+    else if (userColor === "yellow") {
+        return "Yellow beauty burns gold."
+    }
+    else {
+        return "Ooh, sorry, but " + userColor + " is not the color that I am thinking of!"
+    }
 
 }
 alert(analyzeColor(prompt('Find what color am I thinking of?')));
