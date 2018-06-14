@@ -68,18 +68,17 @@ footer p {
 
     .main {
         float: left;
-        width: 60%;
+        /*width: 60%;*/
         margin-bottom: 500px;
     }
 
     .sub-section {
         float: right;
-
-        width: 30%;
+        /*width: 40%;*/
     }
 
     footer {
-        clear: both;
+        clear: left;
     }
 }
 

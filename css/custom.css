@@ -1,0 +1,27 @@
+.jumbotron {
+    background-image: url("pizza.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.transbox{
+    background-color: white;
+    opacity: .4;
+    width: 100%;
+}
+
+.transbox h1{
+    font-weight: bold;
+    color: #000000;
+}
+
+.choices {
+    background-color: lightskyblue;
+    width: 100%;
+    padding: 10px 0;
+}
+.non-colliding{
+    clear: both;
+}
+

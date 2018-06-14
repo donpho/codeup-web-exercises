@@ -1,10 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order Your Pizza!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Your custom styles go here -->
 </head>
 <body>
-$END$
+
+<!-- Main page content -->
+<!--Top nav bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Pizza world</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+        </form>
+    </div>
+</nav>
+<br>
+<!--Pizza Image-->
+<div class="jumbotron jumbotron-fluid">
+        <div class="transbox">
+            <h1 class="display-4">Welcome to Pizza World!</h1>
+        <!--<img src="css/pizza.png" class="img-fluid" alt="Responsive image">-->
+    </div>
+</div>
+<br>
+<h2> Build your own pizza!</h2>
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link btn" data-toggle="collapse" href="#size-and-crust" aria-expanded="false" aria-controls="size-and-crust"><span class="badge badge-secondary">1</span>&#32 Size and Crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn" data-toggle="collapse" href="#cheese-and-sauce" aria-expanded="false" aria-controls="cheese-and-sauce"><span class="badge badge-secondary">2</span>&#32 Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn" data-toggle="collapse" href="#toppings" aria-expanded="false" aria-controls="toppings"><span class="badge badge-secondary">3</span>&#32 Toppings</a>
+        </li>
+    </ul>
+<!--Card details and forms-->
+    <!--Size and Crust Card-->
+    <div class="collapse in" id="size-and-crust">
+        <div class="choices non-colliding">
+            Choose your size and crust.
+        </div>
+        <div class="card">
+            <h5 class="card-header">Hand Tossed</h5>
+            <div class="card-body">
+                <p class="card-text">Garlic-seasoned crust with a rich, buttery taste.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="hand-tossed-Radio" id="hand-tossed-10" value="hand-tossed-small">
+                    <label class="form-check-label" for="hand-tossed-10">
+                        Small (10")
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="hand-tossed-Radio" id="hand-tossed-12" value="hand-tossed-medium">
+                    <label class="form-check-label" for="hand-tossed-12">
+                        Medium (12")
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Crispy</h5>
+            <div class="card-body">
+                <p class="card-text">Thin enough for the optimum crispy to crunchy ratio.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="crispy-Radio" id="crispy-12" value="crispy-medium">
+                    <label class="form-check-label" for="crispy-12">
+                        Medium (12")
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="crispy-Radio" id="crispy-14" value="crispy-large">
+                    <label class="form-check-label" for="crispy-14">
+                        Large (14")
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group float-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-secondary">Next</button>
+        </div>
+    </div>
+
+    <!--Cheese and Sauce card-->
+    <div class="collapse" id="cheese-and-sauce">
+        <div class="choices non-colliding">
+            Choose your cheese and sauce.
+        </div>
+        <div class="card">
+            <h5 class="card-header">Cheese?</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    Cheese
+                    <!--Drop down form for Cheese-->
+                </p>
+                <div>
+                    <label>
+                        <select class="form-control">
+                            <option value="standard-cheese">Regular</option>
+                            <option value="no-cheese">None</option>
+                            <option value="extra-cheese">Extra Cheese</option>
+                            <option value="all-the-cheese">Yes, I would like to have some pizza with my CHEESE.</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <h5 class="card-header">Sauce?</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        What type?
+                        <!--Drop down form for Sauce-->
+                    </p>
+                    <div>
+                        <label>
+                            <select class="form-control">
+                                <option value="classic">Classic Marinara</option>
+                                <option value="garlic-parmesan">Creamy Garlic Parmesan</option>
+                                <option value="bbq">Barbeque</option>
+                                <option value="buffalo">Buffalo</option>
+                            </select>
+                        </label>
+                    </div>
+                    <p class="card-text">
+                        How much?
+                    </p>
+                        <!--Drop down form for amount of sauce-->
+                    <div>
+                        <label>
+                            <select class="form-control">
+                                <option value="regular-sauce">Regular</option>
+                                <option value="light-sauce">Light</option>
+                                <option value="extra-sauce">Extra</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="btn-group float-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-secondary">Previous</button>
+            <button type="button" class="btn btn-secondary">Next</button>
+        </div>
+    </div>
+
+    <!--Toppings card-->
+    <div class="collapse" id="toppings">
+        <div class="choices non-colliding">
+            Choose your toppings.
+        </div>
+        <div class="card">
+            <h5 class="card-header">Choose your meats.</h5>
+            <div class="card-body">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="beef">Beef</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="ham">Ham</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="steak">Philly Steak</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="bacon">Bacon</label>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h5 class="card-header">Choose your veggies.</h5>
+            <div class="card-body">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="peppers">Green Peppers</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="mushrooms">Mushrooms</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="onion">Onion</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="jalapeno">Jalapeno Peppers</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="pineapple">Pineapples</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group float-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-secondary">Previous</button>
+            <button type="button" class="btn btn-secondary">Next</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="btn-group btn-group-lg float-right non-colliding" role="group" aria-label="...">
+        <button type="button" class="btn btn-secondary">Checkout!</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
 </body>
 </html>
