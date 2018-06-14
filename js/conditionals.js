@@ -16,25 +16,31 @@
  * Can you refactor your code to use functions?
  */
 function numberId(number) {
-    number = parseInt(number);
-    // parseInt(number);
     console.log(number);
-    if (number % 2 === 0){
-        alert('Your number is even.')
+    try {
+        if (number.NaN){
+
+        }
+        if (number % 2 === 0) {
+            alert('Your number is even.')
+        }
+        else {
+            alert('Your number is odd');
+        }
+        var hundred = number + 100;
+        alert('The number you enter + 100 is ' + hundred);
+        console.log(number);
+        if (number <= 0) {
+            alert('Your number is negative.');
+        }
+        else {
+            alert('Your number is positive');
+        }
+        return "This is the end of this exercise."
     }
-    else {
-        alert('Your number is odd');
+    catch (err){
+        alert('Sorry this is not a number!');
     }
-    number += 100;
-    alert('The number you enter + 100 is ' + number);
-    number -= 100;
-    if (number <= 0){
-        alert('Your number is negative.');
-    }
-    else {
-        alert('Your number is positive');
-    }
-    return "This is the end of this exercise."
 }
 
 var user = confirm('Would you like to enter a number?');
