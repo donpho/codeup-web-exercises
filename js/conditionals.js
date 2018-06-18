@@ -16,7 +16,7 @@
  * Can you refactor your code to use functions?
  */
 function numberId(number) {
-    number = parseInt(number);
+    number = parseFloat(number);
     console.log(number);
         if (number % 2 === 0) {
             alert('Your number is even.')
@@ -24,8 +24,8 @@ function numberId(number) {
         else {
             alert('Your number is odd');
         }
-        var hundred = number + 100;
-        alert('The number you enter + 100 is ' + hundred);
+        //var hundred = number + 100;
+        alert('The number you enter + 100 is ' + (number+100));
         console.log(number);
         if (number <= 0) {
             alert('Your number is negative.');
