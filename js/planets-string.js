@@ -24,30 +24,22 @@
      * string, and <li> tags around each planet.
      */
 
-    /**
-    planetsArray.unshift('Pluto');
-    var planets = planetsArray;
-    console.log(planets);
-    planets = planets.join('*<br>8');
-    console.log(planets);
-    planets = planets.split('8');
-    console.log(planets);
-    planets = planets.join(' ');
-    console.log(planets);
-    planets = planets.split('*');
-    console.log(planets);
-    planets.shift();
-    console.log(planets);
-    */
+
+    // planetsArray.unshift('PlaceHolder');
+    // var planets = planetsArray;
+    // console.log(planets); // Add a placeholder in front of the array
+    // planets = planets.join('*<br> ');
+    // console.log(planets); // Made the array into a string with '*<br> '
+    // planets = planets.split('*'); // Indicating where the split is going to be and the rest of the tag will go right if split left and vice versa.
+    // console.log(planets);
+    // planets.shift(); // Removed the PlaceHolder as it served its purpose of allowing us to join array with <br> to the actual beginning of the array.
+    // console.log(planets);
+
 
     planetsArray.unshift('PlaceHolder');
     var planets = planetsArray;
     console.log(planets);
-    planets = planets.join('*<li>8');
-    console.log(planets);
-    planets = planets.split('8');
-    console.log(planets);
-    planets = planets.join(' ');
+    planets = planets.join('*<li> ');
     console.log(planets);
     planets = planets.split('*');
     console.log(planets);
