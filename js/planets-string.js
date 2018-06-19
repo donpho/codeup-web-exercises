@@ -96,6 +96,7 @@
 
     console.log(planets);
     planets.push(end.shift());
+    planets = planets.join(' ');
     console.log(planets);
 
 })();
