@@ -37,7 +37,7 @@
 
     planetsArray.unshift('PlaceHolder');
     var planets = planetsArray;
-    planets = planets.join('*<li> ');
+    planets = planets.join('*\n<li> ');
     planets = planets.split('*');
     planets.shift();
 
@@ -64,7 +64,7 @@
     var end = planets.pop();
     end = end.split();
     end.push('PlaceHolder');
-    end = end.join(' </ul>^');
+    end = end.join(' \n</ul>^');
     end = end.split('^');
     end.pop();
 
