@@ -12,6 +12,16 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+        firstName: "Rick",
+        lastName: "Sanchez",
+        sayHello: function () {
+            return "Hello from " + this.firstName + ' ' + this.lastName;
+        }
+    };
+    console.log(person.firstName); // "Rick"
+    console.log(person.lastName); // "Sanchez"
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +31,8 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +48,27 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron',
+            amount: 180},
+        {name: 'Ryan',
+            amount: 250},
+        {name: 'George',
+            amount: 320}
+
+    ];
+    shoppers.detail = function() {
+        shoppers.forEach(function (elements, index) {
+            if (shoppers[index].amount > 200) {
+                console.log('Shopper: ' + shoppers[index].name + ' has made a purchase of: ' + shoppers[index].amount + ' and receive a 12% discount! The new total is: ' +
+                    (shoppers[index].amount - shoppers[index].amount * .12));
+            }
+            else {
+                console.log('Shopper: ' + shoppers[index].name + ' has made a purchase of: ' + shoppers[index].amount + ' and receive no discounts. The total is: ' + shoppers[index].amount);
+            }
+        })
+    };
+    shoppers.detail();
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +82,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "Douluo Dalu",
+            author: {
+                firstName: "San Shao",
+                lastName: "Tang Jia"
+            }
+        },
+        {
+            title: "Douluo Dalu: Legend of the Divine Realm",
+            author: {
+                firstName: "San Shao",
+                lastName: "Tang Jia"
+            }
+        },
+        {
+            title: "Douluo Dalu 2: The Unrivaled Tang Sect",
+            author: {
+                firstName: "San Shao",
+                lastName: "Tang Jia"
+            }
+        },
+        {
+            title: "Douluo Dalu 3: The Legend of the Dragon King",
+            author: {
+                firstName: "San Shao",
+                lastName: "Tang Jia"
+            }
+        }
+
+    ];
+
+    // author's full name will be printed last name + first name for chinese formality.
+
+    books.list = function () {
+        books.forEach(function (elements, index){
+            console.log('Book # ' + (index+1) + '\n' + 'Title: ' + books[index].title + '\n' + 'Author: ' + books[index].author.lastName + ' ' + books[index].author.firstName);
+        })
+    };
+
+    books.list();
 
     /**
      * TODO:
@@ -90,5 +160,26 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(bookTitle, authorFirstName, authorLastName){
+        //books.title = books.title.push(bookTitle);
+        //books.title.author.firstName = books.title.author.firstName.push(authorFirstName);
+       //books.title.author.lastName = books.title.author.lastName.push(authorLastName);
+        books.push.title.author.firstName.lastName(bookTitle,authorFirstName,authorLastName);
+    }
+
+    function showBookInfo(){
+        var user = confirm('Would you like to view a book information?');
+        while (user === true){
+            alert('We have ' + books.length + ' books.');
+            var bookNumber = parseInt(prompt('Please select a book number.'));
+            console.log('Book # ' + (bookNumber-1) + '\n' + 'Title: ' + books[bookNumber-1].title + '\n' + 'Author: ' + books[bookNumber-1].author.lastName + ' ' + books[bookNumber-1].author.firstName);
+            user = confirm('Would you like to view a book information?');
+        }
+    }
+
+
+    showBookInfo();
+    //createBook(prompt('Please enter the title of the book.'),prompt('Please enter the author\' first name.'),prompt('Please enter the author\' last name.'));
 
 })();
