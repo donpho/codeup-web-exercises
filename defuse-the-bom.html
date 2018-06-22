@@ -7,14 +7,24 @@
 </head>
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<h2 id="message">This BOM will self destruct in <span id="timer">30</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
+<button>Defuse the BOM</button>
 
 <script>
     (function() {
         "use strict";
 
-        var detonationTimer = 5;
+        var detonationTimer = 30;
         var intervalId;
 
         // TODO: This function needs to be called once every second
@@ -41,13 +51,38 @@
             alert('The BOM has been defused.');
         }
 
+        var testButton = document.getElementsByTagName('button');
+
+        //Generates a random color for the buttons
+        for (var i = 0; i < testButton.length; i++) {
+            testButton[i].style.background = randomColors();
+        }
+
+        function randomize() {
+            mainHeader.style.color = randomColors();
+        }
+        // random colors - taken from here:
+        // http://www.paulirish.com/2009/random-hex-color-code-snippets/
+
+        function randomColors() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        var RNG = Math.floor(Math.random() * ((testButton.length-1) + 1));
+
+        testButton[RNG].addEventListener('click',defuseTheBOM);
+
         // Don't modify anything below this line!
         //
         // This causes the defuseTheBOM() function to be called
         // when the "defuser" button is clicked.
         // We will learn about events in the DOM lessons
-        var defuser = document.getElementById('defuser');
-        defuser.addEventListener('click', defuseTheBOM);
+
+
+        // var defuser = document.getElementById('defuser');
+        // defuser.addEventListener('click', defuseTheBOM);
+
+
     })();
 </script>
 </body>
