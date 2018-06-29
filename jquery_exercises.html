@@ -27,12 +27,27 @@
 
     // When having multiple 'id' JQuery selector will only select the first 'id' when running the code.
 
-    $(function () {
-        $('.test, #list').css("border","1px solid red");
-
-
-        $('*').css('background-color', 'yellow');
+    // $(function () {
+    //     $('.test, #list').css("border","1px solid red");
+    //
+    //
+    //     $('*').css('background-color', 'yellow');
+    // })
+    
+    $('h1').click(function () {
+        $(this).css('background-color','salmon')
     })
+
+    $('p').dblclick(function () {
+        $(this).css('font-size','18px')
+    })
+    
+    $('li').hover(function () {
+        $(this).css('color','red')
+    }, function () {
+        $(this).css('color','black')
+    })
+
 
 </script>
 </body>
