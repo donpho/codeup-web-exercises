@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Exercise</title>
+</head>
+<body>
+<h1 id="title">Favorite Novels</h1>
+
+<div class="content">
+    <p id="list">Top 5's</p>
+    <ol>
+        <li class ="test">Douluo Dalu</li>
+        <li class = "test">Coiling Dragon</li>
+        <li>Stellar Transformation</li>
+        <li>Battle Through the Heavens</li>
+        <li>I Shall Seal the Heavens</li>
+    </ol>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script>
+    // var contents = $('#list').html();
+    // alert(contents);
+
+    // When having multiple 'id' JQuery selector will only select the first 'id' when running the code.
+
+    $(function () {
+        $('.test, #list').css("border","1px solid red");
+
+
+        $('*').css('background-color', 'yellow');
+    })
+
+</script>
+</body>
+</html>
