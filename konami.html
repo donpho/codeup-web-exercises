@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<style>
+    body {
+        background: black;
+    }
+    #gameOver {
+        background-image: url("img/SNAKE.jpg");
+        /* Full height */
+        height: 800px;
+        width: 100%;
+
+        /* Center and scale the image nicely */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #frog {
+        background-image: url("img/frog.gif");
+        height: 50%;
+        width: 500px;
+
+        background-size: cover;
+        background-position: center;
+        padding: 40%;
+    }
+
+</style>
+<body>
+<audio id="xyz" src="audio/mgs_alert.mp3" type="audio/mp3"></audio>
+
+<div id ="gameOver">
+</div>
+
+<div id = "frog">
+</div>
+
+https://youtu.be/dQw4w9WgXcQ
+
+<iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    "use strict";
+
+    /*UP: 38
+    * DOWN: 40
+    * LEFT: 37
+    * RIGHT: 39
+    * A: 65
+    * B: 66*/
+
+    var cheatcode = [38,38,40,40,37,39,37,39,66,65,13];
+    var input = [];
+    var i =0;
+    var delay = 500;
+
+    function reset(){
+        i = 0;
+        input = [];
+        console.log('Reset!')
+    }
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+        $('#gameOver').hide();
+        $('#frog').hide();
+        if (event.keyCode === cheatcode[i]){
+            input = input.concat(cheatcode[i]);
+            console.log('Good');
+            i++;
+            if (input.toString() === cheatcode.toString()){
+                $("#xyz").trigger("play");
+                $("#gameOver").fadeIn('20000');
+                //$('#gameOver').show();
+                var timeoutId = setTimeout(function () {
+                    alert('!');
+                    if (confirm('Continue?') === true)
+                    {
+                        $('#gameOver').hide();
+                    }
+                    else
+                    {
+                        $('#gameOver').hide();
+                        $('#frog').fadeIn('slow');
+                    }
+                }, delay);
+                reset();
+
+
+            }
+        }
+        else {
+            console.log('Wrong input!');
+            reset();
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
