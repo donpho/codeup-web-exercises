@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Konami Code</title>
+    <title>What's in the Box</title>
 </head>
 <style>
     body {
         background: black;
     }
+
+    #box{
+        font-size: 100px;
+        background-image: url("img/box.jpg");
+        height: 800px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     #gameOver {
         background-image: url("img/SNAKE.jpg");
         /* Full height */
@@ -21,28 +31,29 @@
     #frog {
         background-image: url("img/frog.gif");
         height: 50%;
-        width: 500px;
+        width: 600px;
 
         background-size: cover;
         background-position: center;
-        padding: 40%;
+        padding: 25%;
     }
 
 </style>
 <body>
 <audio id="xyz" src="audio/mgs_alert.mp3" type="audio/mp3"></audio>
 
-<div id ="gameOver">
+<div id = "box">
+    <h1> What's in the box?</h1>
 </div>
 
-<div id = "frog">
-</div>
+<div id ="gameOver"></div>
 
-https://youtu.be/dQw4w9WgXcQ
+<div id = "frog"></div>
 
-<iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id = "player"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
     "use strict";
 
@@ -63,16 +74,42 @@ https://youtu.be/dQw4w9WgXcQ
         input = [];
         console.log('Reset!')
     }
+    //-------------YouTube API----------
+    var tag = document.createElement('script');
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    var player;
 
+    tag.src = "https://www.youtube.com/iframe_api";
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // iframe (YT video elements)
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '500px',
+            width: '800px',
+            videoId: 'dQw4w9WgXcQ'
+            // events: {
+            //     'onReady': onPlayerReady
+            // }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    //-------KONAMI code----------
     $(document).keyup(function(event){
         console.log(event.keyCode);
         $('#gameOver').hide();
         $('#frog').hide();
+        $('#player').hide();
         if (event.keyCode === cheatcode[i]){
             input = input.concat(cheatcode[i]);
             console.log('Good');
             i++;
             if (input.toString() === cheatcode.toString()){
+                $('#box').fadeOut();
                 $("#xyz").trigger("play");
                 $("#gameOver").fadeIn('20000');
                 //$('#gameOver').show();
@@ -81,6 +118,8 @@ https://youtu.be/dQw4w9WgXcQ
                     if (confirm('Continue?') === true)
                     {
                         $('#gameOver').hide();
+                        $('#player').show();
+                        player.playVideo()
                     }
                     else
                     {
@@ -89,8 +128,6 @@ https://youtu.be/dQw4w9WgXcQ
                     }
                 }, delay);
                 reset();
-
-
             }
         }
         else {
