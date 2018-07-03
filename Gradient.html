@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradient</title>
+    <style>
+        body {
+            height: 100vh;
+            background: #9067C6; /* For browsers that do not support gradients */
+            background: linear-gradient(-90deg, #242038, #9067C6, #242038); /* Standard syntax (must be last) */
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+
+        .content {
+            height: 100%;
+            width: calc(80%);
+            background: #8D86C9;
+            float: left;
+            z-index: 1000;
+        }
+
+        .side{
+            width: calc(10%);
+            float: left;
+            padding: 1px;
+        }
+
+        .row {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 1200px;
+            color: #F7ECE1;
+        }
+
+    </style>
+</head>
+<body>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'side'></div>
+
+        <div class = 'content'>
+            Test
+        </div>
+
+        <div class = 'side'></div>
+    </div>
+</div>
+
+</body>
+</html>
