@@ -12,7 +12,7 @@
         display: none;
     }
 
-this is a test
+
 </style>
 <body>
 
@@ -94,6 +94,15 @@ this is a test
                 $(this).children().last().css('background-color','cyan');
             })
         });
+
+        $('h3').click(function () {
+            $(this).next().css('font-weight','bold');
+        });
+
+        $('ul').click(function () {
+           $(this).children().first().css('color','blue');
+        });
+
 
     });
 </script>
