@@ -16,6 +16,12 @@
 </style>
 <body>
 
+<div id="effects">
+    <h1>Would you like to subscribe to our newsletter?</h1><span id = 'x'> x</span>
+</div>
+
+<h2>Do you want to register an account?</h2>
+
 <!--Facts from https://www.dosomething.org/us/facts/11-facts-about-national-parks-->
 
 <h1>10 Facts about National Parks</h1>
@@ -89,6 +95,8 @@
             $(this).nextUntil('dt').toggleClass('invisible');
         })
 
+        //Traversing Exercise
+
         $('#highlight').click(function () {
             $('ul').each(function () {
                 $(this).children().last().css('background-color','cyan');
@@ -96,12 +104,24 @@
         });
 
         $('h3').click(function () {
-            $(this).next().css('font-weight','bold');
+            // $(this).next().css('font-weight','bold'); //// Traversing Exercise
+            $(this).next().toggle();
         });
 
         $('ul').click(function () {
            $(this).children().first().css('color','blue');
         });
+
+        // Effects Exercise
+
+        $('#x').click(function () {
+            $('div').hide();
+        });
+
+        $('ul').hide();
+
+        $('h2').hide().delay(8000).fadeIn();
+
 
 
     });
