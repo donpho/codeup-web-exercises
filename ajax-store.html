@@ -20,6 +20,8 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="refresh">Refresh</button>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
@@ -32,12 +34,34 @@
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
-        var inv = {};
-        $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-            console.log("Request status: " + status);
-            console.log("Data returned from server:");
-            console.log(data);
-        });
+
+        function updateTable() {
+            var inv = "";
+            $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+                console.log("Request status: " + status);
+                console.log("Data returned from server:");
+                console.log(data);
+
+                data.forEach(function (item) {
+                    // $('#products').append('<thead><tr>');
+                    // $('#products').append('<th>'+item.title+'</th>');
+                    // $('#products').append('<th>'+item.quantity +'</th>');
+                    // $('#products').append('<th>'+item.price+'</th>');
+                    // $('#products').append('<th>'+item.categories+'</th>');
+                    // $('#products').append('</thead></tr>');
+
+                    inv += '<thead><tr>';
+                    inv += '<th>'+item.title+'</th>';
+                    inv += '<th>'+item.quantity +'</th>';
+                    inv += '<th>'+item.price+'</th>';
+                    inv += '<th>'+item.categories+'</th>';
+                    inv += '</thead></tr>';
+                    $('#products').html(inv);
+                })
+            });
+        }
+        $('#refresh').click(updateTable);
+        
 
 
     })();
