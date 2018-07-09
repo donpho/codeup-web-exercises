@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+</head>
+<body>
+
+<div id="posts"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    (function () {
+        var post = '';
+        $.ajax("data/blog.json").done(function(data, status, jqXhr) {
+            data.forEach(function (blog) {
+                post += '<h1>' + blog.title + '</h1>';
+                post += '<h4>' + blog.categories + '</h4>';
+                post += '<p>' + blog.content + '</p>';
+                $('#posts').html(post);
+
+            })
+        });
+    })();
+</script>
+</body>
+</html>

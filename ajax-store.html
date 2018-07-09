@@ -42,21 +42,24 @@
                 console.log("Data returned from server:");
                 console.log(data);
 
-                data.forEach(function (item) {
-                    // $('#products').append('<thead><tr>');
-                    // $('#products').append('<th>'+item.title+'</th>');
-                    // $('#products').append('<th>'+item.quantity +'</th>');
-                    // $('#products').append('<th>'+item.price+'</th>');
-                    // $('#products').append('<th>'+item.categories+'</th>');
-                    // $('#products').append('</thead></tr>');
+                $('#products').html('');
 
-                    inv += '<thead><tr>';
-                    inv += '<th>'+item.title+'</th>';
-                    inv += '<th>'+item.quantity +'</th>';
-                    inv += '<th>'+item.price+'</th>';
-                    inv += '<th>'+item.categories+'</th>';
-                    inv += '</thead></tr>';
-                    $('#products').html(inv);
+                data.forEach(function (item) {
+                    $('#products').append('<thead><tr>');
+                    $('#products').append('<th>'+item.title+'</th>');
+                    $('#products').append('<th>'+item.quantity +'</th>');
+                    $('#products').append('<th>'+item.price+'</th>');
+                    $('#products').append('<th>'+item.categories+'</th>');
+                    $('#products').append('</thead></tr>');
+
+
+                    // inv += '<thead><tr>';
+                    // inv += '<th>'+item.title+'</th>';
+                    // inv += '<th>'+item.quantity +'</th>';
+                    // inv += '<th>'+item.price+'</th>';
+                    // inv += '<th>'+item.categories+'</th>';
+                    // inv += '</thead></tr>';
+                    // $('#products').html(inv);
                 })
             });
         }
