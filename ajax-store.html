@@ -36,30 +36,18 @@
 
 
         function updateTable() {
-            var inv = "";
             $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-                console.log("Request status: " + status);
-                console.log("Data returned from server:");
-                console.log(data);
 
-                $('#products').html('');
+                $('#insertProducts').html('');
 
                 data.forEach(function (item) {
-                    $('#products').append('<thead><tr>');
-                    $('#products').append('<th>'+item.title+'</th>');
-                    $('#products').append('<th>'+item.quantity +'</th>');
-                    $('#products').append('<th>'+item.price+'</th>');
-                    $('#products').append('<th>'+item.categories+'</th>');
-                    $('#products').append('</thead></tr>');
+                    $('#insertProducts').append('<tr>');
+                    $('#insertProducts').append('<td>'+item.title+'</td>');
+                    $('#insertProducts').append('<td>'+item.quantity +'</td>');
+                    $('#insertProducts').append('<td>'+item.price+'</td>');
+                    $('#insertProducts').append('<td>'+item.categories+'</td>');
+                    $('#insertProducts').append('</tr>');
 
-
-                    // inv += '<thead><tr>';
-                    // inv += '<th>'+item.title+'</th>';
-                    // inv += '<th>'+item.quantity +'</th>';
-                    // inv += '<th>'+item.price+'</th>';
-                    // inv += '<th>'+item.categories+'</th>';
-                    // inv += '</thead></tr>';
-                    // $('#products').html(inv);
                 })
             });
         }
