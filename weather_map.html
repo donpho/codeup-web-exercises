@@ -2,9 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather Map</title>
+    <style>
+        body{
+            background: cornflowerblue;
+        }
+        .row {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 25px;
+            background: ghostwhite;
+        }
+        .one-third {
+            width: 33.33%;
+            border: darkgrey 1px solid;
+        }
+        #map-canvas {
+            height: 500px;
+        }
+        #content{
+            margin: 50px;
+        }
+        #header{
+            font-size: 64px;
+        }
+        #locationName{
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
+<div id = 'header'>
+    Daily Weather Report
+</div>
 
+<div id = 'content'>
+    <div id="locationName"></div>
+    <div id="weather" class="row"></div>
+    <div id="map-canvas"></div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-8qcq5OEFru3aW1QoswlmNILcQEgF2QM&"></script>
+<script>
+    var latitude = 29.4246;
+    var longitude = -98.4952;
+    function weatherCheck(){
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "a3f28546f0b247c59c43b84fe132b8c9",
+            lat: latitude,
+            lon: longitude,
+            units: "imperial"
+        }).done(function(data) {
+            $('#locationName').html('<h1>'+data.city.name)+'</h1>';
+            var dayForecast = '';
+            for(var i =0;i<=16;i += 8){
+                dayForecast += '<div class = one-third>';
+
+                //TODO make sure that numbers are whole numbers
+                dayForecast += '<h2>' + data.list[i].main.temp_max.toFixed(0) + '&#176; / ' +  data.list[i].main.temp_min.toFixed(0) + '&#176;</h2>';
+
+                //TODO a conditional when the weather is clear, just say clear skies
+                dayForecast += '<p><img src = "http://openweathermap.org/img/w/'+data.list[i].weather[0].icon+'.png"></p>';
+                dayForecast += '<p>' + data.list[i].weather[0].main + ': ' + data.list[i].weather[0].description + '</p>';
+                dayForecast += '<p> Humidity: ' + data.list[i].main.humidity + '</p>';
+                dayForecast += '<p> Wind: ' + data.list[i].wind.speed + '</p>';
+                dayForecast += '<p> Pressure: ' + data.list[i].main.pressure + '</p>';
+
+                dayForecast += '</div>';
+                $('#weather').html(dayForecast);
+            }
+        });
+    }
+
+    function initMap() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+            zoom: 5,
+            center: {
+                lat: latitude,
+                lng: longitude
+            }
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions );
+
+        var marker = new google.maps.Marker({
+            position :{
+                lat: latitude,
+                lng: longitude
+            },
+            map: map,
+            draggable:true,
+            animation: google.maps.Animation.DROP,
+        });
+
+        $('#map-canvas').on('mouseup',function () {
+            longitude = marker.position.lng();
+            latitude = marker.position.lat();
+            initMap();
+            weatherCheck();
+        })
+    }
+
+    initMap();
+    weatherCheck();
+
+</script>
 </body>
 </html>
