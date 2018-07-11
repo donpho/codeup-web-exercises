@@ -14,9 +14,9 @@
         var post = '';
         $.ajax("data/blog.json").done(function(data, status, jqXhr) {
             data.forEach(function (blog) {
-                post += '<h1>' + blog.title + '</h1>';
+                post += '<div><h1>' + blog.title + '</h1>';
                 post += '<h4>' + blog.categories + '</h4>';
-                post += '<p>' + blog.content + '</p>';
+                post += '<p>' + blog.content + '</p></div>';
                 $('#posts').html(post);
 
             })
